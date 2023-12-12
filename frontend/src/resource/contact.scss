@@ -1,0 +1,208 @@
+
+.contactsMainContainer {
+    display: grid;
+    grid-template-rows: 10% 10% 65% 15%;
+    overflow: hidden;
+    background-color: #080420;
+     transition: 1s;
+
+    .brand {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+
+        img {
+            height: 2rem;
+        }
+
+        h3 {
+            color: #fff;
+            text-transform: uppercase;
+        }
+    }
+    .gridShow{
+        grid-template-rows: 20% 80%;
+    }
+    .searchfrd {
+        display: grid;
+        justify-content: center;
+        flex-direction: column;
+        left: 20%;
+        width: 100%;
+        grid-template-columns: 100%;
+
+        .displaySearch {
+            width: 100%;
+            opacity: 1;
+            overflow: hidden;
+            transition: opacity 0.3s ease,
+            max-height 0.3s ease;
+            
+            .results{
+                padding: 0.5rem;
+                display: flex;
+                align-items: center;
+                border-bottom: 1px solid black;
+                gap: 1rem;
+                img{
+                    height: 3rem;
+                }
+                p{
+                    font-size: 1.2rem;
+                }
+                i{
+                    cursor: pointer;
+                    color: #f23;
+                    &:hover{
+                        color: #f23;
+                    }
+                }
+            }
+        }
+
+        .display {
+            border-radius: 5px;
+            width: 90%;
+            display: block;
+            height: 95%;
+            top: 0%;
+            position: relative;
+            z-index: 100;
+            background-color: #9186f3;
+            overflow: hidden;
+            left: 5%;
+        }
+
+         .noDisplay {
+            max-height: 0;
+            transition: 1s;
+        }
+
+        form {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            max-height: 100px;
+
+            input {
+                width: 100%;
+                padding: 5%;
+                background-color: transparent;
+                color: #fff;
+                outline: none;
+                border: none;
+                border-top: 1.5px solid #3f3c52;
+                border-bottom: 1.5px solid #3f3c52;
+                height: 90%;
+                &::placeholder {
+                    color: #fff;
+                    text-align: center;
+                    font-size: 17px;
+                }
+            }
+        }
+    }
+
+    .contacts {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: auto;
+        overflow-x: hidden;
+        transition: 1.5s;
+        gap: 0.8rem;
+
+        &::-webkit-scrollbar {
+            width: 0.2rem;
+
+            &-thumb {
+                background-color: #ffffff39;
+                width: 0.1rem;
+                border-radius: 1rem;
+            }
+        }
+
+        .contact {
+            background-color: #ffffff39;
+            min-height: 4rem;
+            width: 90%;
+            cursor: pointer;
+            border-radius: 2px;
+            padding: 0.4rem;
+            gap: 1rem;
+            align-items: center;
+            display: flex;
+            transition: 0.5s ease-in-out;
+
+            .avatar {
+                img {
+                    height: 3rem;
+                }
+            }
+
+            .username {
+                h3 {
+                    color: #fff;
+                }
+            }
+        }
+
+        .selected {
+            background-color: #9186f3;
+        }
+
+    }
+
+    .current-user {
+        background-color: #0d0d30;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: rem;
+
+        .avatar {
+            position: relative;
+            right: 5%;
+            img {
+                height: 4rem;
+                max-inline-size: 100%;
+            }
+        }
+
+        .username {
+            h2 {
+                color: #fff;
+            }
+        }
+        .ghost{
+            
+            position: relative;
+            left: 10%;
+            i{  
+                color: #fff;
+                font-size: 1.6rem;
+                cursor: pointer;
+                transition: 0.9s;
+                &:hover{
+                    color:#f23
+                }
+            }
+        }
+
+        @media screen and (min-width: 720px) and (max-width:778px) {
+            gap: 0.5rem;
+
+            .username {
+                h2 {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+.changeTheGrid{
+    display: grid;
+    grid-template-rows: 10% 50% 65% 15%;
+    transition: 1s;
+}

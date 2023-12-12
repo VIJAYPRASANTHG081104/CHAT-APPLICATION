@@ -1,0 +1,41 @@
+.mainRequestContainer {
+    height: 100%;
+
+    .request {
+        position: relative;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        padding: 1rem;
+
+        img {
+            width: 10%;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 0.5rem;
+            right: 2%;
+            position: absolute;
+
+            button {
+                color: #ffffffd8;
+                border: 1px solid #ffffffb7;
+                outline: none;
+                padding: 5px;
+                background-color: transparent;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: 0.5s;
+                &:hover{
+                    background-color: #ffffff;
+                    color: #000;
+                }
+            }
+        }
+    }
+}
