@@ -12,9 +12,7 @@ const socket = require('socket.io');
 dotenv.config();
 const app = express();
 app.use(cors({
-    origin:["https://chat-application-client-beta.vercel.app"],
-    method: ["POST","GET"],
-    credentials:true
+    origin:["https://chat-application-client-beta.vercel.app"]
 }));
 app.use(express.json({limit:'10mb'}));
 // app.use(express.urlencoded({limit: '50mb'}));
