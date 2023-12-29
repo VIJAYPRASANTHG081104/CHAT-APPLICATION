@@ -12,7 +12,7 @@ const socket = require('socket.io');
 dotenv.config();
 const app = express();
 app.use(cors({
-    origin:["chat-application-client-beta.vercel.app"],
+    origin:["https://chat-application-client-beta.vercel.app"],
     method: ["POST","GET"],
     credentials:true
 }));
@@ -41,7 +41,7 @@ const server = app.listen(PORT,()=>{
 
 const io = socket(server,{
     cors:{
-    origin:"chat-application-client-beta.vercel.app",
+    origin:"https://chat-application-client-beta.vercel.app",
     }
 });
 
