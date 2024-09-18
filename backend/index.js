@@ -9,20 +9,17 @@ const resToReqRoute = require('./routes/resForReqRouter')
 const socket = require('socket.io');
 
 
+
 dotenv.config();
 const app = express();
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'https://chat-application-client-beta.vercel.app');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-    res.header('Access-Control-Allow-Headers', 'Content-Type');
-    next();
-});
+
+app.use(cors());
 app.use(express.json({limit:'10mb'}));
 // app.use(express.urlencoded({limit: '50mb'}));
 PORT = process.env.PORT || 5000
 
 
-mongoose.connect(mongodb+srv://vijayprasanth08112004:chatapp@chat-app.diw7i4y.mongodb.net/)
+mongoose.connect("mongodb+srv://vijayprasanth08112004:chatapp@chat-app.diw7i4y.mongodb.net/")
 mongoose.connection.on("connected",()=>{
     console.log("DB SUCCESS")
 })
@@ -42,7 +39,7 @@ const server = app.listen(PORT,()=>{
 
 const io = socket(server,{
     cors:{
-    origin:"https://chat-application-client-beta.vercel.app",
+    origin:"http://localhost:3000",
     }
 });
 

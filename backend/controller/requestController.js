@@ -67,7 +67,9 @@ const requestFriend = async (req, res) => {
     }
 }
 const getRequest = async (req, res) => {
+    // console.log("gege")
     const { _id } = req.body;
+    console.log(_id);
     try {
         const gettingRequest = await model.findById({ _id: _id }).select(
             'request'
